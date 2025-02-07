@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Price Calculator</title> 
+    <title>Calculadora de Precios</title> 
     <style>
         /* Namespace all styles to #price-calculator-wrapper */ 
         #price-calculator-wrapper {
@@ -156,72 +156,72 @@
 <body>
 
     <div id="price-calculator-wrapper">
-        <h2>Price Calculator</h2>
+        <h2>Calculadora de Precios</h2>
 
         <div id="price-calculator-form">
-            <!-- Location Dropdown -->
+            <!-- Dropdown de Ubicación -->
             <div class="form-group">
-                <label for="location">Select Home Location</label>
+                <label for="location">Selecciona la ubicación del hogar</label>
                 <select id="location" name="location" required>
-                    <option value="">-- Select Home Location --</option>
+                    <option value="">-- Selecciona la ubicación del hogar --</option>
                     <option value="palma-de-mallorca">Palma de Mallorca</option>
                     <option value="stockholm">Stockholm</option>
                     <option value="marbella">Marbella</option>
                     <option value="menorca">Menorca</option>
                     <option value="malta">Malta</option>
-                    <option value="cancun">Cancun</option>
+                    <option value="cancun">Cancún</option>
                     <option value="ibiza">Ibiza</option>
                     <option value="costa-brava">Costa Brava</option>
                     <option value="st-tropez">St Tropez</option>
-                    <option value="corsica">Corsica</option>
+                    <option value="corsica">Córcega</option>
                     <option value="la-spezia">La Spezia</option>
                     <option value="jersey">Jersey</option>
-                    <option value="uk">UK</option>
-                    <option value="amsterdam">Amsterdam</option>
+                    <option value="uk">Reino Unido</option>
+                    <option value="amsterdam">Ámsterdam</option>
                     <option value="bonaire">Bonaire</option>
                 </select>
             </div>
 
-            <!-- Membership Dropdown -->
+            <!-- Dropdown de Membresía -->
             <div class="form-group">
-                <label for="membership">Select Membership</label>
+                <label for="membership">Selecciona la membresía</label>
                 <select id="membership" name="membership" required>
-                    <option value="">-- Select Membership --</option>
-                    <option value="unlimited-boating">Unlimited Boating</option>
-                    <option value="on-demand-boating">On Demand Boating</option>
+                    <option value="">-- Selecciona la membresía --</option>
+                    <option value="unlimited-boating">Navegación Ilimitada</option>
+                    <option value="on-demand-boating">Navegación bajo demanda</option>
                 </select>
             </div>
 
-            <!-- Category Dropdown -->
+            <!-- Dropdown de Categoría -->
             <div class="form-group" id="category-group" style="display:none;">
-                <label for="category">Select Boat Category</label>
+                <label for="category">Selecciona la categoría del barco</label>
                 <select id="category" name="category" required>
-                    <option value="">-- Select Category --</option>
+                    <option value="">-- Selecciona la categoría --</option>
                 </select>
             </div>
 
-            <!-- Package Dropdown -->
+            <!-- Dropdown de Paquete -->
             <div class="form-group" id="package-group" style="display:none;">
-                <label for="package">Select Package</label>
+                <label for="package">Selecciona el paquete</label>
                 <select id="package" name="package" required>
-                    <option value="">-- Select Package --</option>
-                    <!-- Options will be populated dynamically -->
+                    <option value="">-- Selecciona el paquete --</option>
+                    <!-- Opciones se llenarán dinámicamente -->
                 </select>
             </div>
 
-            <!-- Information Messages -->
+            <!-- Mensajes de Información -->
             <div class="message" id="on-demand-message" style="display:none;"></div>
             <div class="message" id="unlimited-message" style="display:none;"></div>
 
-            <!-- Price Display -->
+            <!-- Visualización de Precio -->
             <div id="price-display" style="display:none;">
                 <div class="price-row">
-                    <span>Price:</span>
+                    <span>Precio:</span>
                     <span><span id="price"></span> <span id="currency"></span></span>
                 </div>
             </div>
 
-            <!-- Contact Form Section -->
+            <!-- Sección del Formulario de Contacto -->
             <div id="contact-form">
                 <style>
                     #specific-h3 {
@@ -229,38 +229,37 @@
                     }
                 </style>
                 <br>
-                <h3 id="specific-h3">Looking for your dream boating life? Get in touch!</h3>
+                <h3 id="specific-h3">¿Buscas la vida de navegación de tus sueños? ¡Contáctanos!</h3>
 
-                <!-- Hidden Field for Lead Source -->
-<input type="hidden" id="lead-source" name="lead_source" value="Configurator">
-
+                <!-- Campo oculto para la fuente del contacto -->
+                <input type="hidden" id="lead-source" name="lead_source" value="Configurador">
 
                 <br>
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Nombre</label>
                     <input type="text" id="name" name="name" required>
-                     <span id="name-error" style="color: red; font-size: 0.85rem; display: none;">Required</span>
+                     <span id="name-error" style="color: red; font-size: 0.85rem; display: none;">Requerido</span>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">Correo electrónico</label>
                     <input type="email" id="email" name="email" required>
-                     <span id="email-error" style="color: red; font-size: 0.85rem; display: none;">Required</span>
+                     <span id="email-error" style="color: red; font-size: 0.85rem; display: none;">Requerido</span>
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Optional Message</label>
+                    <label for="message">Mensaje (Opcional)</label>
                     <textarea id="message" name="message"></textarea>
                 </div>
 
-                <!-- Submit Button -->
-                <button type="button" id="submit-button">Submit</button>
+                <!-- Botón de Envío -->
+                <button type="button" id="submit-button">Enviar</button>
             </div>
 
-            <!-- Confirmation Message -->
+            <!-- Mensaje de Confirmación -->
             <div id="confirmation" style="display:none;">
-                <h2>Thank You!</h2>
-                <p>Thank you for your interest in Agapi Boat Club.</p>
+                <h2>¡Gracias!</h2>
+                <p>Gracias por tu interés en Agapi Boat Club.</p>
             </div>
         </div>
     </div>
@@ -324,7 +323,7 @@
                     },
                     "on-demand-boating": {
                         "PayGo-membership": 1945
-                        // Only PayGo Membership available
+                        // Solo PayGo Membership disponible
                     }
                 },
                 "malta": {
@@ -418,7 +417,7 @@
                     },
                     "on-demand-boating": {
                         "PayGo-membership": 1000
-                        // Only PayGo Membership available
+                        // Solo PayGo Membership disponible
                     }
                 },
                 "amsterdam": {
@@ -468,11 +467,11 @@
             }
 
             function getPackageDisplayName(pkg) {
-                // Provide a friendly display name for packages
+                // Proporciona un nombre de visualización amigable para los paquetes
                 if (pkg === "PayGo-membership") {
-                    return "PayGo Only Membership";
+                    return "Sólo Membresía PayGo";
                 } else if (pkg === "PayGo-package") {
-                    return "PayGo Package";
+                    return "Paquete PayGo";
                 } else {
                     return pkg.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
                 }
@@ -487,11 +486,9 @@
 
                 let additionalMessage = "";
                 if (packageSelected === "PayGo-membership") {
-                    // Full original text for PayGo Only Membership
-                    additionalMessage = "Price for PayGo Membership fee applies to all Boat Categories and includes Onboarding.";
+                    additionalMessage = "El precio de la tarifa de Membresía PayGo se aplica a todas las categorías de barco e incluye la incorporación.";
                 } else if (packageSelected === "PayGo-package") {
-                    // Full text for PayGo Package
-                    additionalMessage = "Price for PayGo memberships applies to all Boat Categories. Price package for boat trips including Membership fee and Onboarding free of charge.";
+                    additionalMessage = "El precio de las membresías PayGo se aplica a todas las categorías de barco. El paquete de precios para los paseos en barco incluye la tarifa de membresía y la incorporación gratuita.";
                 }
 
                 onDemandMessage.innerHTML = additionalMessage;
@@ -502,12 +499,12 @@
                 const location = locationSelect.value;
                 const membership = membershipSelect.value;
 
-                // Hide messages initially
+                // Ocultar mensajes inicialmente
                 unlimitedMessage.style.display = "none";
                 onDemandMessage.style.display = "none";
 
-                categorySelect.innerHTML = '<option value="">-- Select Category --</option>';
-                packageSelect.innerHTML = '<option value="">-- Select Package --</option>';
+                categorySelect.innerHTML = '<option value="">-- Selecciona la categoría --</option>';
+                packageSelect.innerHTML = '<option value="">-- Selecciona el paquete --</option>';
                 categoryGroup.style.display = "none";
                 packageGroup.style.display = "none";
                 priceDisplay.style.display = "none";
@@ -517,7 +514,7 @@
                     if (availablePackages) {
                         const packages = Object.keys(availablePackages).filter(pkg => availablePackages[pkg] !== undefined);
                         if (packages.length === 1) {
-                            // Only one package available
+                            // Solo un paquete disponible
                             packageGroup.style.display = "none";
                             packageSelect.value = packages[0];
                             updateOnDemandMessage(packages[0]);
@@ -535,17 +532,25 @@
                         packageGroup.style.display = "none";
                     }
                 } else if (membership === "unlimited-boating") {
-                    // Show unlimited message
+                    // Mostrar mensaje de navegación ilimitada
                     unlimitedMessage.style.display = "block";
-                    unlimitedMessage.innerHTML = "We offer special prices for Dual-homes, Only summer, Only weekdays or Off-season.";
-                    // Show category group if options are available
+                    unlimitedMessage.innerHTML = "Ofrecemos precios especiales para viviendas duales, solo en verano, solo entre semana o fuera de temporada.";
+                    // Mostrar grupo de categoría si hay opciones disponibles
                     if (prices[location]?.[membership]) {
                         categoryGroup.style.display = "block";
                         const availableCategories = prices[location][membership];
                         for (const category in availableCategories) {
                             const option = document.createElement("option");
+                            // Convertir "boat-category-a" a "Categoría de Barco A"
+                            let categoryLabel = category;
+                            if (category.startsWith("boat-category-")) {
+                                const catLetter = category.split("-").pop().toUpperCase();
+                                categoryLabel = "Categoría de Barco " + catLetter;
+                            } else {
+                                categoryLabel = category.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+                            }
                             option.value = category;
-                            option.textContent = category.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+                            option.textContent = categoryLabel;
                             categorySelect.appendChild(option);
                         }
                     } else {
@@ -566,7 +571,7 @@
                         updateOnDemandMessage(selectedPackage);
                         const price = prices[location]?.[membership]?.[selectedPackage];
                         if (price === null) {
-                            priceSpan.textContent = "Prices for 2025 available soon";
+                            priceSpan.textContent = "Precios para 2025 disponibles próximamente";
                             currencySpan.textContent = "";
                             priceDisplay.style.display = 'block';
                         } else if (price) {
@@ -584,7 +589,7 @@
                     if (location && category) {
                         const price = prices[location]?.[membership]?.[category];
                         if (price === null) {
-                            priceSpan.textContent = "Prices for 2025 available soon";
+                            priceSpan.textContent = "Precios para 2025 disponibles próximamente";
                             currencySpan.textContent = "";
                             priceDisplay.style.display = 'block';
                         } else if (price) {
@@ -605,65 +610,63 @@
             const submitButton = wrapper.querySelector("#submit-button");
 
             submitButton.addEventListener("click", function () {
-    const nameField = wrapper.querySelector("#name");
-    const emailField = wrapper.querySelector("#email");
-    const messageField = wrapper.querySelector("#message");
-    const locationField = wrapper.querySelector("#location");
-    const membershipField = wrapper.querySelector("#membership");
-    const categoryField = wrapper.querySelector("#category");
-    const packageField = wrapper.querySelector("#package");
-    const priceField = priceSpan.textContent;
-    const currencyField = currencySpan.textContent;
-    const leadSourceField = wrapper.querySelector("#lead-source");
+                const nameField = wrapper.querySelector("#name");
+                const emailField = wrapper.querySelector("#email");
+                const messageField = wrapper.querySelector("#message");
+                const locationField = wrapper.querySelector("#location");
+                const membershipField = wrapper.querySelector("#membership");
+                const categoryField = wrapper.querySelector("#category");
+                const packageField = wrapper.querySelector("#package");
+                const priceField = priceSpan.textContent;
+                const currencyField = currencySpan.textContent;
+                const leadSourceField = wrapper.querySelector("#lead-source");
 
-    // Basic validation
-    if (!nameField.value.trim() || !emailField.value.trim()) {
-        // Display errors (optional inline error handling can be added here)
-        return;
-    }
+                // Validación básica
+                if (!nameField.value.trim() || !emailField.value.trim()) {
+                    // Mostrar errores (se puede agregar manejo de errores en línea opcional aquí)
+                    return;
+                }
 
-    // Data to send
-    const formData = {
-        name: nameField.value.trim(),
-        email: emailField.value.trim(),
-        message: messageField ? messageField.value.trim() : "",
-        location: locationField.value,
-        membership: membershipField.value,
-        category: categoryField ? categoryField.value : "",
-        package: packageField ? packageField.value : "",
-        price: priceField ? priceField : "",
-        currency: currencyField ? currencyField : "",
-        lead_source: leadSourceField.value
-    };
+                // Datos a enviar
+                const formData = {
+                    name: nameField.value.trim(),
+                    email: emailField.value.trim(),
+                    message: messageField ? messageField.value.trim() : "",
+                    location: locationField.value,
+                    membership: membershipField.value,
+                    category: categoryField ? categoryField.value : "",
+                    package: packageField ? packageField.value : "",
+                    price: priceField ? priceField : "",
+                    currency: currencyField ? currencyField : "",
+                    lead_source: leadSourceField.value
+                };
 
-    // Send to Make.com webhook
-    fetch("https://hook.eu2.make.com/yh6gymw330shtcvjgiszzw1iyyozezbl", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-    }).then(response => {
-        if (response.ok) {
-            console.log("Form data sent to Make.com successfully.");
-        } else {
-            console.error("Failed to send form data to Make.com.");
-        }
-    }).catch(error => console.error("Error sending data to Make.com:", error));
+                // Enviar al webhook de Make.com
+                fetch("https://hook.eu2.make.com/yh6gymw330shtcvjgiszzw1iyyozezbl", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData)
+                }).then(response => {
+                    if (response.ok) {
+                        console.log("Datos del formulario enviados a Make.com exitosamente.");
+                    } else {
+                        console.error("Error al enviar datos del formulario a Make.com.");
+                    }
+                }).catch(error => console.error("Error al enviar datos a Make.com:", error));
 
-    // Continue with EmailJS logic
-    emailjs.send("service_bp6qapf", "template_oymlxox", formData).then(
-        function () {
-            contactForm.style.display = 'none';
-            confirmation.style.display = 'block';
-        },
-        function (error) {
-            console.error("Failed to send email:", error);
-        }
-    );
-});
-
-
+                // Continuar con la lógica de EmailJS
+                emailjs.send("service_bp6qapf", "template_oymlxox", formData).then(
+                    function () {
+                        contactForm.style.display = 'none';
+                        confirmation.style.display = 'block';
+                    },
+                    function (error) {
+                        console.error("Error al enviar el correo:", error);
+                    }
+                );
+            });
 
             locationSelect.addEventListener('change', updateCategories);
             membershipSelect.addEventListener('change', updateCategories);
