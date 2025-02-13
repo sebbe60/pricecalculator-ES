@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Calculadora de PrecioS</title> 
+    <title>Calculadora de Precios</title> 
     <style>
         /* Namespace all styles to #price-calculator-wrapper */ 
         #price-calculator-wrapper {
@@ -161,11 +161,11 @@
         <div id="price-calculator-form">
             <!-- Dropdown de Ubicación -->
             <div class="form-group">
-                <label for="location">Selecciona la ubicación del hogar</label>
+                <label for="location">Selecciona tu ubicación</label>
                 <select id="location" name="location" required>
-                    <option value="">-- Selecciona la ubicación del hogar --</option>
+                    <option value="">-- Selecciona tu ubicación --</option>
                     <option value="palma-de-mallorca">Palma de Mallorca</option>
-                    <option value="stockholm">Stockholm</option>
+                    <option value="stockholm">Estocolmo</option>
                     <option value="marbella">Marbella</option>
                     <option value="menorca">Menorca</option>
                     <option value="malta">Malta</option>
@@ -184,11 +184,11 @@
 
             <!-- Dropdown de Membresía -->
             <div class="form-group">
-                <label for="membership">Selecciona la membresía</label>
+                <label for="membership">Selecciona tipo de membresía</label>
                 <select id="membership" name="membership" required>
                     <option value="">-- Selecciona la membresía --</option>
-                    <option value="unlimited-boating">Navegación Ilimitada</option>
-                    <option value="on-demand-boating">Navegación bajo demanda</option>
+                    <option value="unlimited-boating">Navegación ilimitada</option>
+                    <option value="on-demand-boating">Navegación por uso</option>
                 </select>
             </div>
 
@@ -202,7 +202,7 @@
 
             <!-- Dropdown de Paquete -->
             <div class="form-group" id="package-group" style="display:none;">
-                <label for="package">Selecciona el paquete</label>
+                <label for="package">Selecciona Navegación por uso</label>
                 <select id="package" name="package" required>
                     <option value="">-- Selecciona el paquete --</option>
                     <!-- Opciones se llenarán dinámicamente -->
@@ -229,7 +229,7 @@
                     }
                 </style>
                 <br>
-                <h3 id="specific-h3">¿Buscas la vida de navegación de tus sueños? ¡Contáctanos!</h3>
+                <h3 id="specific-h3">¿Buscas la vida náutica de tus sueños? ¡Contáctanos!</h3>
 
                 <!-- Campo oculto para la fuente del contacto -->
                 <input type="hidden" id="lead-source" name="lead_source" value="Configurator">
@@ -486,9 +486,9 @@
 
                 let additionalMessage = "";
                 if (packageSelected === "PayGo-membership") {
-                    additionalMessage = "El precio de la tarifa de Membresía PayGo se aplica a todas las categorías de barco e incluye la incorporación.";
+                    additionalMessage = "La tarifa de Membresía PayGo se aplica a todas las categorías de barco e incluye la incorporación al Club.";
                 } else if (packageSelected === "PayGo-package") {
-                    additionalMessage = "El precio de las membresías PayGo se aplica a todas las categorías de barco. El paquete de precios para los paseos en barco incluye la tarifa de membresía y la incorporación gratuita.";
+                    additionalMessage = "La tarifa de Membresía PayGo se aplica a todas las categorías de barco. El precio total del paquete PayGo puede ser usado para salidas en barco, la cuota anual de membresía PayGo está incluída sin costo adicional. la tarifa de membresía y la incorporación gratuita.";
                 }
 
                 onDemandMessage.innerHTML = additionalMessage;
